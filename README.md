@@ -30,58 +30,32 @@ El proyecto está organizado utilizando una estructura Maven estándar:
 
 src/
 
-├── main/
-
-│   └── java/
-
-│        └── org.example/
-
-│            └── utest/
-
-│                ├── pages/  
-
-│                │   └── UTestRegistrationPage.java
-
-│                │ 
-
-│                └── utils/  
-
+├──       main/
+│                └── java/
+│                └── org.example/
+│                └── utest/
+│                            ├── pages/  
+│                            │   └── UTestRegistrationPage.java
+│                            │ 
+│                            └── utils/  
 │                    ├── ConfigurationReader.java   
-
 │                    ├── ScreenshotHelper.java  
-
 │                    └── WebDriverFactory.java
-
 ├── test/
-
 |   ├── java/
-
 |   │   └── org.example/
-
 |   │        └── utest/
-
 |   │            ├── runners/    
-
 |   │            │   └──TestRunner.java
-
 |   │            ├── StepDefinitions/   
-
 |   │                └── RegistroStepDefinitions.java
-
 |   └── resources/
-
 |       ├── features/  
-
 |       │   └── RegistroUtest.feature
-
 |       └── config.properties
-
 ├── .gitignore
-
 ├── chromedriver.exe    
-
 ├── configuration.properties
-
 └── pom.xml
 
 
