@@ -13,15 +13,12 @@ public class WebDriverFactory {
     public static WebDriver createWebDriver(String browser) {
         if (driver == null) {
             // Asigna la ruta del driver de Chrome antes de crearlo
-            // Se asume que el archivo 'chromedriver.exe' está en la raíz del proyecto
-            // Si lo pones en otro lugar, actualiza esta ruta
             System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
             switch (browser.toLowerCase()) {
                 case "chrome":
-                    // Agrega opciones para manejar problemas de conexión con el driver
+                    // opciones para manejar problemas de conexión con el driver
                     ChromeOptions chromeOptions = new ChromeOptions();
-                    // Este argumento ayuda a evitar errores de conexión con el puerto local
                     chromeOptions.addArguments("--remote-allow-origins=*");
                     driver = new ChromeDriver(chromeOptions);
                     break;

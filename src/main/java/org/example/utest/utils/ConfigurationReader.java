@@ -17,7 +17,7 @@ public class ConfigurationReader {
             input.close();
         } catch (IOException e) {
             e.printStackTrace();
-            throw new RuntimeException("Failed to load configuration.properties file! Please ensure it is in the project root.");
+            throw new RuntimeException("Fallo al cargar el archivo configuration.properties! por favor revisa la ruta.");
         }
     }
 

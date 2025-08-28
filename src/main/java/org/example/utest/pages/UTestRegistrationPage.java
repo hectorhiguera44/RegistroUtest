@@ -53,14 +53,14 @@ public class UTestRegistrationPage {
     // Métodos de acción
 
     public void clickJoinNow() {
-        // Llama al método para cerrar el pop-up de cookies si está presente.
+        // Llama al metodo  para cerrar el pop-up de cookies si está presente.
         handleCookiePopup();
 
         // Espera y hace clic en el botón "Join Now". Aumentamos el tiempo a 20s para mayor seguridad.
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(joinNowButton)).click();
     }
-
+        //Quitar Popup
     private void handleCookiePopup() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -74,12 +74,18 @@ public class UTestRegistrationPage {
             System.out.println("No se encontró el pop-up de cookies, continuando con el test.");
         }
     }
-
+        // completar datos personales
     public void fillPersonalData(String firstName, String lastName, String email, String birthMonth, String birthDay, String birthYear) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        //nombre
         wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameField)).sendKeys(firstName);
         driver.findElement(lastNameField).sendKeys(lastName);
+
+        //correo
         driver.findElement(emailField).sendKeys(email);
+
+        //fecha de nacimiento
         WebElement monthElement = wait.until(ExpectedConditions.visibilityOfElementLocated(birthMonthSelect));
         Select monthSelect = new Select(monthElement);
         monthSelect.selectByVisibleText(birthMonth);
@@ -91,12 +97,13 @@ public class UTestRegistrationPage {
         yearSelect.selectByVisibleText(birthYear);
         wait.until(ExpectedConditions.elementToBeClickable(nextLocationButton));
     }
-
+        // avanzar pagina locacion
     public void clickNextLocation(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(nextLocationButton)).click();
     }
 
+        //completar datos locacion
     public void  fillLocationData(String zip, String countryId){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(postalCodeField)).sendKeys(zip);
@@ -106,10 +113,13 @@ public class UTestRegistrationPage {
         wait.until(ExpectedConditions.elementToBeClickable(nextDevicesButton));
     }
 
+        //avanzar pagina dispositivo
     public void clickNextDevices(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(nextDevicesButton)).click();
     }
+
+        //completar datos dispositivo
     public void fillDevicesData(String mobileDevice, String model, String operatingSystem){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
@@ -133,12 +143,13 @@ public class UTestRegistrationPage {
         wait.until(ExpectedConditions.elementToBeClickable(lastStepButton));
 
     }
-
+        //avanzar pagina Seguridad
     public void clickLastStep(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(lastStepButton)).click();
     }
 
+        //completar datos seguridad
     public void fillLastStep(String password){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField)).sendKeys(password);
@@ -148,12 +159,13 @@ public class UTestRegistrationPage {
         wait.until(ExpectedConditions.elementToBeClickable(privacySecurityCheck)).click();
 
     }
-
+        //finalizar registro
     public void clickCompleteSetup(){
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(completeSetupButton)).click();
-
     }
+
+        //Validacion
     public String getConfirmationText(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement confirmationElement = wait.until(ExpectedConditions.visibilityOfElementLocated(lastStepHeader));
