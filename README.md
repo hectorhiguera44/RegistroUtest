@@ -1,4 +1,5 @@
 Automatización del registro de UTest
+
 Este proyecto proporciona un conjunto de pruebas automatizadas para el proceso de registro de nuevos usuarios de UTest, desarrollado con Selenium WebDriver, Cucumber y Java. Las pruebas están diseñadas para ser robustas, legibles y fáciles de mantener, siguiendo los principios del Desarrollo Basado en el Comportamiento (BDD) y el Modelo de Objetos de Página (POM).
 
 🚀 Primeros pasos
@@ -28,33 +29,61 @@ mvn clean install
 El proyecto está organizado utilizando una estructura Maven estándar:
 
 src/
+
 ├── main/
+
 │   └── java/
+
 │        └── org.example/
+
 │            └── utest/
-│                ├── pages/           
+
+│                ├── pages/  
+
 │                │   └── UTestRegistrationPage.java
+
 │                │ 
-│                └── utils/    
-│                    ├── ConfigurationReader.java               
-│                    ├── ScreenshotHelper.java           
+
+│                └── utils/  
+
+│                    ├── ConfigurationReader.java   
+
+│                    ├── ScreenshotHelper.java  
+
 │                    └── WebDriverFactory.java
+
 ├── test/
+
 |   ├── java/
+
 |   │   └── org.example/
+
 |   │        └── utest/
-|   │            ├── runners/               
+
+|   │            ├── runners/    
+
 |   │            │   └──TestRunner.java
-|   │            ├── StepDefinitions/         
+
+|   │            ├── StepDefinitions/   
+
 |   │                └── RegistroStepDefinitions.java
+
 |   └── resources/
-|       ├── features/              
+
+|       ├── features/  
+
 |       │   └── RegistroUtest.feature
+
 |       └── config.properties
+
 ├── .gitignore
+
 ├── chromedriver.exe    
+
 ├── configuration.properties
+
 └── pom.xml
+
 
 🧪 Cómo ejecutar las pruebas
 Puede ejecutar las pruebas desde su IDE (como IntelliJ IDEA o Eclipse) o desde la línea de comandos usando Maven.
