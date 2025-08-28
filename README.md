@@ -31,13 +31,21 @@ El proyecto está organizado utilizando una estructura Maven estándar:
 src/
 
 ├──       main/
+
 │                └── java/
+
 │                └── org.example/
+
 │                └── utest/
+
 │                            ├── pages/  
+
 │                            │   └── UTestRegistrationPage.java
+
 │                            │ 
+
 │                            └── utils/  
+
 │                    ├── ConfigurationReader.java   
 │                    ├── ScreenshotHelper.java  
 │                    └── WebDriverFactory.java
