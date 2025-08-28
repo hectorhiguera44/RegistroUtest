@@ -28,44 +28,7 @@ mvn clean install
 ⚙️ Estructura del proyecto
 El proyecto está organizado utilizando una estructura Maven estándar:
 
-src/
-
-├──       main/
-
-│                └── java/
-
-│                └── org.example/
-
-│                └── utest/
-
-│                            ├── pages/  
-
-│                            │   └── UTestRegistrationPage.java
-
-│                            │ 
-
-│                            └── utils/  
-
-│                    ├── ConfigurationReader.java   
-│                    ├── ScreenshotHelper.java  
-│                    └── WebDriverFactory.java
-├── test/
-|   ├── java/
-|   │   └── org.example/
-|   │        └── utest/
-|   │            ├── runners/    
-|   │            │   └──TestRunner.java
-|   │            ├── StepDefinitions/   
-|   │                └── RegistroStepDefinitions.java
-|   └── resources/
-|       ├── features/  
-|       │   └── RegistroUtest.feature
-|       └── config.properties
-├── .gitignore
-├── chromedriver.exe    
-├── configuration.properties
-└── pom.xml
-
+<img width="403" height="544" alt="image" src="https://github.com/user-attachments/assets/228bfc43-e666-461b-a7e7-d1de53921d58" />
 
 🧪 Cómo ejecutar las pruebas
 Puede ejecutar las pruebas desde su IDE (como IntelliJ IDEA o Eclipse) o desde la línea de comandos usando Maven.
