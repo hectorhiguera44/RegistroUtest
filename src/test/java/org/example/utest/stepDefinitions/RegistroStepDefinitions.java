@@ -93,7 +93,7 @@ public class RegistroStepDefinitions {
     }
 
     @And("el usuario confirma los datos registrados")
-    public void el_usuario_confirma_los_datos_registrados() {
+    public void el_usuario_confirma_los_datos_registrados() throws InterruptedException {
         registrationPage.clickCompleteSetup();
     }
 

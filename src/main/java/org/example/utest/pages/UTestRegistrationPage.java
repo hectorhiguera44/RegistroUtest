@@ -30,7 +30,7 @@ public class UTestRegistrationPage {
     private By nextDevicesButton = By.xpath("//span[contains(text(), 'Next: Devices')]/.. ");
     private By SelectBrandSelect = By.cssSelector("span[aria-label='Select Brand']");
     private By SelectModelSelect = By.cssSelector("span[aria-label='Select a Model']");
-    private By OperatingSystemSelect =By.xpath("//input[@id='focusser-5']//span[@aria-label='Select OS']/..");
+    private By OperatingSystemSelect =By.xpath("//div[@name='handsetOSId']");
     //Seguridad
     private By lastStepButton = By.xpath("//span[contains(text(), 'Next: Last Step')]/.. ");
     private By passwordField = By.id("password");
@@ -136,10 +136,10 @@ public class UTestRegistrationPage {
         modelOption.click();
 
         //Select the Operating System
-        //WebElement systemElement = wait.until(ExpectedConditions.elementToBeClickable(OperatingSystemSelect));
-        //systemElement.click();
-        //WebElement systemOption = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'" + operatingSystem + "')]")));
-        //systemOption.click();
+        WebElement systemElement = wait.until(ExpectedConditions.elementToBeClickable(OperatingSystemSelect));
+        systemElement.click();
+        WebElement systemOption = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'" + operatingSystem + "')]")));
+        systemOption.click();
         wait.until(ExpectedConditions.elementToBeClickable(lastStepButton));
 
     }
@@ -160,9 +160,10 @@ public class UTestRegistrationPage {
 
     }
         //finalizar registro
-    public void clickCompleteSetup(){
+    public void clickCompleteSetup() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(completeSetupButton)).click();
+        Thread.sleep(20000);
     }
 
         //Validacion
